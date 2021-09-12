@@ -128,11 +128,21 @@ Throughout history, Sicily has been at the crossroad of cultures, landscapes and
 
 <p>
     <q>The definition of the area of a polygon is the measure of the area that is enclosed by it. 
-    As polygons are closed plane shapes, thus, the area of a polygon is the space that is occupied by it in a two-dimensional plane and always expressed in square units."</q>
+    As polygons are closed plane shapes, thus, the area of a polygon is the space that is occupied by it in a two-dimensional plane and always expressed in square units.</q>
 </p>
-<p><a href="https://www.cuemath.com/geometry/area-of-polygons/">Quick link for algorithm source!!</a>
-    
-    
+<p><a href="https://www.cuemath.com/geometry/area-of-polygons/">Quick link for algorithm description!!</a>
+    <pre>
+        double area(const vector<point>& fig) {
+            double res = 0;
+            for (unsigned i = 0; i < fig.size(); i++) {
+                point p = i ? fig[i - 1] : fig.back();
+                point q = fig[i];
+                res += (p.x - q.x) * (p.y + q.y);
+            }
+            return fabs(res) / 2;
+        }
+    </pre>
+    <p><a href="https://cp-algorithms.com/geometry/area-of-simple-polygon.html">Quick link for algorithm code!!</a>    
 
 
 
